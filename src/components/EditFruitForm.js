@@ -41,6 +41,9 @@ export default class EditFruitForm extends Component {
           onChange={this.handleChange}
           value={image}
         />
+        <button onClick={() => this.props.deleteFruit(this.props.index)}>
+          Remove Fruit
+        </button>
       </div>
     );
   }

@@ -54,6 +54,12 @@ export default class App extends Component {
     this.setState({ fruits });
   };
 
+  deleteFruit = key => {
+    const fruits = { ...this.state.fruits };
+    fruits[key] = null;
+    this.setState({ fruits });
+  };
+
   addToOrder = key => {
     // take a copy of state
     const order = { ...this.state.order };
@@ -88,6 +94,7 @@ export default class App extends Component {
           loadSampleFruit={this.loadSampleFruit}
           addFruit={this.addFruit}
           updateFruit={this.updateFruit}
+          deleteFruit={this.deleteFruit}
           fruits={this.state.fruits}
         />
       </div>

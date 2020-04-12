@@ -12,6 +12,7 @@ export default class Inventory extends Component {
             key={key}
             index={key}
             updateFruit={this.props.updateFruit}
+            deleteFruit={this.props.deleteFruit}
             fruit={this.props.fruits[key]}
           />
         ))}
