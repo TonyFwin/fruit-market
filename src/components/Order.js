@@ -5,8 +5,9 @@ export default class Order extends Component {
   renderOrder = key => {
     const fruit = this.props.fruits[key];
     const count = this.props.order[key];
-    const isAvailable = fruit.status === 'available';
+    const isAvailable = fruit && fruit.status === 'available';
 
+    if (!fruit) return null;
     if (!isAvailable) {
       return (
         <li key={key}>
