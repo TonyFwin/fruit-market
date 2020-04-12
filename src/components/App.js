@@ -48,6 +48,12 @@ export default class App extends Component {
     this.setState({ fruits });
   };
 
+  updateFruit = (key, updatedFruit) => {
+    const fruits = { ...this.state.fruits };
+    fruits[key] = updatedFruit;
+    this.setState({ fruits });
+  };
+
   addToOrder = key => {
     // take a copy of state
     const order = { ...this.state.order };
@@ -81,6 +87,8 @@ export default class App extends Component {
         <Inventory
           loadSampleFruit={this.loadSampleFruit}
           addFruit={this.addFruit}
+          updateFruit={this.updateFruit}
+          fruits={this.state.fruits}
         />
       </div>
     );
