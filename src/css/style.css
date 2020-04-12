@@ -275,24 +275,6 @@ header.top h1 {
   -webkit-box-pack: center;
   justify-content: center;
 }
-header.top h1 .ofThe {
-  display: -webkit-box;
-  display: flex;
-  font-size: 3rem;
-  color: #f5a623;
-  -webkit-box-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  align-items: center;
-  background: url('images/anchor.svg') center no-repeat;
-  background-size: cover;
-  padding: 0 1rem;
-}
-header.top h1 .ofThe .of {
-  padding-right: 2rem;
-  position: relative;
-  right: -0.5rem;
-}
 header.top h3 {
   margin: 0;
   font-size: 2rem;
