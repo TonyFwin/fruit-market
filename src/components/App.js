@@ -3,6 +3,7 @@ import Header from './Header';
 import Inventory from './Inventory';
 import Order from './Order';
 import Fruit from './Fruit';
+import base from '../base';
 
 import sampleFruits from '../sample-fruits';
 
@@ -11,6 +12,18 @@ export default class App extends Component {
     fruits: {},
     order: {}
   };
+
+  componentDidMount() {
+    const { params } = this.props.match;
+    this.ref = base.syncState(`${params.storeId}/fruits`, {
+      context: this,
+      state: 'fruits'
+    });
+  }
+
+  componentWillUnmount() {
+    base.removeBinding(this.ref);
+  }
 
   addFruit = fruit => {
     // take a copy of the existing state
