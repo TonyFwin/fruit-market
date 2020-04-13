@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Header from './Header';
 import Inventory from './Inventory';
 import Order from './Order';
@@ -11,6 +12,10 @@ export default class App extends Component {
   state = {
     fruits: {},
     order: {}
+  };
+
+  static propTypes = {
+    match: PropTypes.object
   };
 
   componentDidMount() {

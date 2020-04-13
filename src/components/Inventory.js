@@ -1,8 +1,17 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import AddFruitForm from './AddFruitForm';
 import EditFruitForm from './EditFruitForm';
 
 export default class Inventory extends Component {
+  static propTypes = {
+    fruits: PropTypes.object,
+    updateFruit: PropTypes.func,
+    deleteFruit: PropTypes.func,
+    loadSampleFruit: PropTypes.func,
+    addFruit: PropTypes.func
+  };
+
   render() {
     return (
       <div className='inventory'>

@@ -1,6 +1,20 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export default class EditFruitForm extends Component {
+  static propTypes = {
+    fruit: PropTypes.shape({
+      name: PropTypes.string,
+      image: PropTypes.string,
+      desc: PropTypes.string,
+      status: PropTypes.string,
+      price: PropTypes.number
+    }),
+    index: PropTypes.string,
+    updateFruit: PropTypes.func,
+    deleteFruit: PropTypes.func
+  };
+
   handleChange = e => {
     const updatedFruit = {
       ...this.props.fruit,
