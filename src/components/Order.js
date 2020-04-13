@@ -19,6 +19,7 @@ export default class Order extends Component {
       <li key={key}>
         {count} {fruit.name}
         {count > 1 ? 's' : ''} {formatPrice(count * fruit.price)}
+        <button onClick={() => this.props.removeFromOrder(key)}>X</button>
       </li>
     );
   };

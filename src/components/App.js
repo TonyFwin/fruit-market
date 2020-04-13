@@ -69,6 +69,12 @@ export default class App extends Component {
     this.setState({ order });
   };
 
+  removeFromOrder = key => {
+    const order = { ...this.state.order };
+    delete order[key];
+    this.setState({ order });
+  };
+
   loadSampleFruit = () => {
     this.setState({ fruits: sampleFruits });
   };
@@ -89,7 +95,11 @@ export default class App extends Component {
             ))}
           </ul>
         </div>
-        <Order fruits={this.state.fruits} order={this.state.order} />
+        <Order
+          fruits={this.state.fruits}
+          order={this.state.order}
+          removeFromOrder={this.removeFromOrder}
+        />
         <Inventory
           loadSampleFruit={this.loadSampleFruit}
           addFruit={this.addFruit}
