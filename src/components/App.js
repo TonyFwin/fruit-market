@@ -111,6 +111,7 @@ export default class App extends Component {
           updateFruit={this.updateFruit}
           deleteFruit={this.deleteFruit}
           fruits={this.state.fruits}
+          storeId={this.props.match.params.storeId}
         />
       </div>
     );
